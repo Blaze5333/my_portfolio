@@ -9,10 +9,12 @@ import { ArrowRight, Github, Linkedin, Twitter, ChevronDown, Code, Laptop, Serve
 import Link from "next/link"
 import Image from "next/image"
 import ProfilePhoto1 from "../components/assets/profile_photo1.jpeg"
+
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const heroRef = useRef<HTMLDivElement>(null)
   const cardRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -23,6 +25,26 @@ export default function Hero() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+
+  // Initialize window size on client-side only
+  useEffect(() => {
+    // Set window size initially
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight
+    })
+
+    // Update on resize
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -114,30 +136,32 @@ export default function Hero() {
         <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-blue-500/50 to-transparent" />
       </div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 w-full h-full">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-white rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              opacity: Math.random() * 0.5 + 0.3,
-              scale: Math.random() * 0.5 + 0.5,
-            }}
-            animate={{
-              y: [null, Math.random() * -50, null],
-              opacity: [null, Math.random() * 0.8 + 0.2, null],
-            }}
-            transition={{
-              duration: Math.random() * 5 + 10,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating particles - Conditionally render only on client side */}
+      {windowSize.width > 0 && (
+        <div className="absolute inset-0 w-full h-full">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              initial={{
+                x: Math.random() * windowSize.width,
+                y: Math.random() * windowSize.height,
+                opacity: Math.random() * 0.5 + 0.3,
+                scale: Math.random() * 0.5 + 0.5,
+              }}
+              animate={{
+                y: [null, Math.random() * -50, null],
+                opacity: [null, Math.random() * 0.8 + 0.2, null],
+              }}
+              transition={{
+                duration: Math.random() * 5 + 10,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Main content */}
       <motion.div
