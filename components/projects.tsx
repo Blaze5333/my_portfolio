@@ -19,6 +19,10 @@ import DeDocScreen2 from "../components/assets/dedoc/screen3.jpeg"
 import DeDocScreen3 from "../components/assets/dedoc/screen4.jpeg"
 import DeDocScreen4 from "../components/assets/dedoc/screen5.jpeg"
 import DeDocScreen5 from "../components/assets/dedoc/screen6.jpeg"
+import SynapsisUIApp1 from "../components/assets/synapsisuiApp/screen1.png"
+import SynapsisUIApp2 from "../components/assets/synapsisuiApp/screen2.png"
+import SynapsisUIApp3 from "../components/assets/synapsisuiApp/screen3.png"
+import SynapsisUIApp4 from "../components/assets/synapsisuiApp/screen4.png"
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all")
   const [activeProject, setActiveProject] = useState(0)
@@ -72,6 +76,30 @@ export default function Projects() {
       ],// Add video URL here if available
       category: "mobile",
       tags: ["React Native", "Solana", "Blockchain", "Digital Signatures", "Smart Contracts", "Web3"],
+      appStoreUrl: null,
+      playStoreUrl: "#",
+      features: [
+        "Document upload & management",
+        "Digital signing with verification",
+        "Blockchain-backed security",
+        "Partnership deed processing",
+        "Multi-party signing workflows",
+      ],
+    },
+    {
+      id: 3,
+      title: "SynapsisUI App",
+      description:
+        "A mobile application showcasing the SynapsisUI component library, designed to help developers create beautiful and functional user interfaces with ease. The app includes a variety of components, styles, and design patterns.",
+      image: SynapsisUI,
+      screenshots: [
+        SynapsisUIApp1,
+        SynapsisUIApp2,
+        SynapsisUIApp3,
+        SynapsisUIApp4,
+      ],// Add video URL here if available
+      category: "mobile",
+      tags: ["React Native", "UI Kit","Component Library", ],
       appStoreUrl: null,
       playStoreUrl: "#",
       features: [
