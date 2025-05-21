@@ -4,14 +4,15 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import MacDock from "@/components/mac-dock"
+import { icons } from "lucide-react"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Portfolio | Full Stack Developer",
-  description: "Portfolio of a full stack mobile and web developer",
-  
-}
+  title: "Mustafa Chaiwala | Full Stack Developer",
+  description:
+    "Portfolio of Mustafa Chaiwala - Full Stack Web & Mobile Developer",
+};
 
 export default function RootLayout({
   children,
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en"  suppressHydrationWarning>
       <body className={`${inter.className} bg-black`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <Navbar />
