@@ -101,8 +101,8 @@ export default function MacDock() {
 
   const socialItems = [
     { icon: <Github className="h-5 w-5" />, label: "GitHub", href: "https://github.com/Blaze5333" },
-    { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", href: "#" },
-    { icon: <Twitter className="h-5 w-5" />, label: "Twitter", href: "#" },
+    { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", href: "https://www.linkedin.com/in/mustafa-chaiwala-7a3890226/" },
+    { icon: <Twitter className="h-5 w-5" />, label: "Twitter", href: "https://x.com/MustafaCha47413" },
   ]
 
   return (

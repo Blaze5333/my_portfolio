@@ -20,13 +20,9 @@ export default function About() {
     "React Native",
     "TailwindCSS",
     "MongoDB",
-    "PostgreSQL",
-    "GraphQL",
-    "AWS",
-    "Docker",
-    "Git",
-    "CI/CD",
-    "Figma",
+    "Rust",
+    "Solana",
+    "Web3.js"
   ]
 
   return (

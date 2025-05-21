@@ -282,15 +282,15 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="flex gap-6"
             >
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://github.com/Blaze5333" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="h-6 w-6" />
                 <span className="sr-only">GitHub</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://www.linkedin.com/in/mustafa-chaiwala-7a3890226/" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin className="h-6 w-6" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://x.com/MustafaCha47413" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter className="h-6 w-6" />
                 <span className="sr-only">Twitter</span>
               </Link>
