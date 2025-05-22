@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import MacDock from "@/components/mac-dock"
 import { icons } from "lucide-react"
-
+import { Analytics } from "@vercel/analytics/next"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
@@ -26,6 +26,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <MacDock />
+          <Analytics/>
         </ThemeProvider>
       </body>
     </html>
