@@ -62,7 +62,7 @@ export default function Navbar() {
 
           <div className="hidden md:block">
             <Button className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white">
-              Resume
+              <Link href="https://drive.google.com/file/d/1HiuK8oZHrqbieaPP9AfEjDghlKlYhGqn/view">Resume</Link>
             </Button>
           </div>
 
